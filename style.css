@@ -1,0 +1,74 @@
+header {
+    display: flex;
+    background-color: #4a4;
+    margin-top: 25px;
+    width: 100%;
+    margin: auto;
+    height: 20%;
+    
+}
+
+#leftSide {
+    margin-top: 25px;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    background-color: #555;
+    
+}
+
+#rightSide {
+    margin-top: 25px;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    background-color: #555;
+}
+
+.sortingBtns {
+    color: white;
+    width: 10%;
+    height: 100%;
+    display: inline;
+    padding: 10px;
+    border: 1px solid white;
+    font-size: large;
+    text-align: center;
+}
+
+.sortingBtns:hover {
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+#slidecontainer {
+    height: 25px;
+    width: 15%;
+    margin: auto;
+}
+
+#startBtn    {
+    margin: auto;
+    height: 70%;
+    width: 7%;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+}
+
+#startBtn:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#leftSide > div{
+    background-color: orange;
+    margin-top: 1px;
+}
+
+#rightSide > div{
+    background-color: lightblue;
+    margin-top: 1px;
+}

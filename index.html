@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>visual sorting</title>
+    <link rel='stylesheet' href='style.css'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src='script.js'></script>
+</head>
+
+<body>
+
+    <header>
+    
+        <ul>
+            <li id='selection'class='sortingBtns' onclick="selectAlgos(this.id)">Selection</li>
+            <li id='insert'class='sortingBtns' onclick="selectAlgos(this.id)">Insert</li>
+            <li id='bubble'class='sortingBtns' onclick="selectAlgos(this.id)">Bubble</li>
+            <li id='quick'class='sortingBtns' onclick="selectAlgos(this.id)">Quick</li>
+            <li id='heap'class='sortingBtns' onclick="selectAlgos(this.id)">Heap</li>
+            <li id='merge'class='sortingBtns' onclick="selectAlgos(this.id)">Merge</li>
+        </ul>
+
+        <div id='slidecontainer'>
+            <input type='range' min='10' max='150' value='75' id='slider'>
+        </div>
+
+        <div id='startBtn' onclick="startSorting()">start</div>
+    
+    </header>
+
+    <div class='sides'id='leftSide'>
+
+    </div>
+
+    <div class='sides' id='rightSide'>
+
+    </div>
+
+</body>
+
+
+
+</html>
