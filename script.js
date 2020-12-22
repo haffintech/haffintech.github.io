@@ -1,5 +1,5 @@
 /*
-    -> TODO: visualize selection and mergeSort
+    -> TODO: visualize mergeSort
     -> TODO: build a switch to select between one visualization and a comparison between two algos
 */
 
@@ -41,7 +41,7 @@ function onSliderChange() {
     initNumbers(numbers);
     numbersLeft = [...numbers];
     numbersRight = [...numbers];
-    if(value > 20){
+    if(value > 20){ // slow animation with short arrays for visual understanding
         delay = 300/value;
     }
 }
@@ -143,7 +143,7 @@ function visualizeAlgorithm(algorithm) {
     var sideAdditionInID;
     var isSwapped;
     
-
+    // get data for correct side
     if(algorithm == sorting1){
         comparedIndex1 = leftComparedIndex1;
         comparedIndex2 = leftComparedIndex2;
@@ -167,7 +167,7 @@ function visualizeAlgorithm(algorithm) {
         return;
     }
     
-
+    // *3 because of delays for animation
     for(let i = 0; i <= (comparedIndex1.length-1)*3; i+=3){
         index1 = comparedIndex1[Math.floor(i/3)];
         index2 = comparedIndex2[Math.floor(i/3)];
@@ -232,6 +232,7 @@ function saveIfSwapped(wasSwapped, algorithm){
 
 // all sorting algorithms
 
+
 function insertSort(numbers){
     var temp;
     for(i = 1; i < numbers.length; i++){
@@ -249,7 +250,6 @@ function insertSort(numbers){
             saveIfSwapped(false, "insert");
         }
     }
-    
 }
 
 
@@ -334,24 +334,22 @@ function merge(numbers, leftStart, rightStart, end) {
     var mid = rightStart-1;
     var temp;
     while(leftStart <= mid && rightStart <= end){
-        
+
         if(numbers[leftStart] <= numbers[rightStart]){
-            leftStart++;
             saveComparedDivs(leftStart, rightStart, "merge");
             saveIfSwapped(false, "merge");
+            leftStart++;
         }
         else {
             temp = numbers[rightStart];
             currentIndex = rightStart;
-            while(currentIndex >= leftStart){
-                //saveComparedDivs(currentIndex, currentIndex-1, "merge");
-                //saveIfSwapped(true, "merge");
+            while(currentIndex > leftStart){
+                saveComparedDivs(currentIndex, currentIndex-1, "merge");
+                saveIfSwapped(true, "merge");
 
                 numbers[currentIndex] = numbers[currentIndex-1];
                 currentIndex--;
             }
-            saveComparedDivs(leftStart, leftStart+1, "merge");
-            saveIfSwapped(true, "merge");
             numbers[leftStart] = temp;
             leftStart++;
             mid++;
