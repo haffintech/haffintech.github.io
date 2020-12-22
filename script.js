@@ -18,7 +18,8 @@ var sorting2 = "";
 var delay = 1200; // in milliseconds, used for visualization
 
 $(document).ready(function() {
-    $('#slider').change(function () {
+    alert("this site is a work in progress. Check out in a couple of days again to see what changed! :)");
+    $('#slider').change(function () {      
         onSliderChange();
     });
 });
