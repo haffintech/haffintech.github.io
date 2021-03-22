@@ -1,7 +1,5 @@
 # visual-sorting
 
-@author: P. Kaiser
-
 This project is a visualization of different sorting algorithms.
 In the upper left there are buttons to choose which algorithms one wants to compare.
 In the upper mid there is a slider to choose how many elements the unsorted arrays should contain.
