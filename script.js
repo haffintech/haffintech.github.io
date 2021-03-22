@@ -14,8 +14,10 @@ var sorting2 = "";
 var delay = 1200; // in milliseconds, used for visualization
 
 $(document).ready(function() {
+    initBars();
     $('#slider').change(function () {      
         onSliderChange();
+        
     });
 });
 
@@ -30,22 +32,29 @@ function onSliderChange() {
     leftComparedIndex2 = [];
     leftIsSwapped = [];
     rightIsSwapped = [];
+    initBars();
+}
 
+function initBars() {
     let value = parseInt($('#slider').val());
     var numbers = new Array(value);
     lengthOfArrays = value;
     initNumbers(numbers);
     numbersLeft = [...numbers];
     numbersRight = [...numbers];
-    if(value > 20){ // slow animation with short arrays for visual understanding
+    if(value > 20){ 
         delay = 300/value;
+    }
+    else {
+        // slow animation for short arrays for visual understanding
+        delay = 1200;
     }
 }
 
 
 function initNumbers(numbers) {
     for(i = 0; i < numbers.length; i++){
-        numbers[i] = Math.round(Math.random() * 300) + 5;
+        numbers[i] = Math.round(Math.random() * 300) + 5; // Math.Random() returns value between 0-1, *300 means this value is between 0-300, value is rounded and then add 5 to have range 5-305
         createBar(numbers[i], '#leftSide', i);
         createBar(numbers[i], '#rightSide', i);
         
@@ -94,6 +103,10 @@ function selectAlgos(id) {
 
 function startSorting() {
     var numbers;
+
+    if(sorting1 == "" && sorting2 == ""){
+        alert("select at least one sorting algorithm to start sorting");
+    }
 
     sorting = [sorting1, sorting2];
     
